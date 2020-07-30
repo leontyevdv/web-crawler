@@ -1,4 +1,4 @@
-package io.leontyev.crawler.crawler;
+package io.leontyev.crawler.engine;
 
 import io.leontyev.crawler.downloader.PageDownloadService;
 import io.leontyev.crawler.parser.HtmlPageParser;

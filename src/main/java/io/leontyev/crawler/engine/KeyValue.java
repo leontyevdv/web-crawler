@@ -1,4 +1,4 @@
-package io.leontyev.crawler.crawler;
+package io.leontyev.crawler.engine;
 
 import java.util.Objects;
 

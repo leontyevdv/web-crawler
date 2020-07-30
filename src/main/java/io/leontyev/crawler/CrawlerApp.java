@@ -1,7 +1,7 @@
 package io.leontyev.crawler;
 
-import io.leontyev.crawler.crawler.CrawlerEngine;
-import io.leontyev.crawler.crawler.KeyValue;
+import io.leontyev.crawler.engine.CrawlerEngine;
+import io.leontyev.crawler.engine.KeyValue;
 import io.leontyev.crawler.downloader.JsoupPageDownloadService;
 import io.leontyev.crawler.downloader.PageDownloadService;
 import io.leontyev.crawler.parser.GoogleHtmlPageParser;
