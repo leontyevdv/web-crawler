@@ -1,0 +1,14 @@
+## Directory-based project format:
+.idea/
+*.iml
+*.ipr
+*.iws
+.gradle
+build/
+target/
+
+# Avoid ignoring Gradle wrapper jar assetFile (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+#Mac OSX
+.DS_Store
