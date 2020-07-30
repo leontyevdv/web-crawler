@@ -159,6 +159,7 @@ public class CrawlerEngine {
     private CompletableFuture<Map<String, Long>> groupResults(List<HtmlPageScripts> htmlPages) {
         return CompletableFuture.supplyAsync(() ->
                         htmlPages.stream()
+                                .filter(Objects::nonNull)
                                 .flatMap(htmlPage -> htmlPage.getScriptUrls().stream())
                                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 , calcExecutorService);
