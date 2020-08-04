@@ -15,7 +15,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class CrawlerEngine {
+public class CrawlerEngine implements AutoCloseable {
 
     private static final Logger LOG = LoggerFactory.getLogger(CrawlerEngine.class);
 
@@ -91,7 +91,8 @@ public class CrawlerEngine {
                 .map(entry -> new KeyValue(entry.getKey(), entry.getValue())));
     }
 
-    public void stop() {
+    @Override
+    public void close() {
         ioExecutorService.shutdown();
         try {
             if (!ioExecutorService.awaitTermination(1000, TimeUnit.MILLISECONDS)) {

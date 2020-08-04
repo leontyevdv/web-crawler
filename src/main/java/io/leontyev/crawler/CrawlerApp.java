@@ -43,12 +43,10 @@ public class CrawlerApp {
         HtmlPageParser<HtmlPageLinks, Document> googleParser = new GoogleHtmlPageParser();
         HtmlPageParser<HtmlPageScripts, Document> jsLibsParser = new JavaScriptLibrariesHtmlPageParser();
 
-        CrawlerEngine engine = new CrawlerEngine(downloadService, googleParser, jsLibsParser);
-        Consumer<Stream<KeyValue>> resultConsumer = keyValueStream -> keyValueStream.forEach(System.out::println);
-
-        engine.crawl(url, 5, resultConsumer);
-
-        engine.stop();
+        try (CrawlerEngine engine = new CrawlerEngine(downloadService, googleParser, jsLibsParser)) {
+            Consumer<Stream<KeyValue>> resultConsumer = keyValueStream -> keyValueStream.forEach(System.out::println);
+            engine.crawl(url, 5, resultConsumer);
+        }
     }
 
     private static String encodeUserQuery(String searchTerm) {
