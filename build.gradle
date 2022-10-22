@@ -26,6 +26,8 @@ dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.4.4'
 }
 
+mainClassName = 'io.leontyev.crawler.CrawlerApp'
+
 jar {
     manifest {
         attributes "Main-Class": "io.leontyev.crawler.CrawlerApp"
